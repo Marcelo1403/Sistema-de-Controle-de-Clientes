@@ -2,6 +2,6 @@
 #include "menus.h"
 
 int main(void) {
-	menuSobre();
+	menuPrincipal();
 	return 0;
 }
