@@ -2,7 +2,8 @@
 
 
 
-void menuPrincipal(void) {
+char menuPrincipal(void) {
+	char escolha = ' ';
 	printf("\n");
 	printf("|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||\n");
 	printf("|||                                                                     |||\n");
@@ -16,15 +17,19 @@ void menuPrincipal(void) {
 	printf("|||            4. Encerrar programa                                     |||\n");
   	printf("|||                                                                     |||\n");
 	printf("|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||\n");
-	printf("\n");
 
+	printf("Por favor digite sua escolha: \n");
+    scanf(" %c", &escolha);
+    return toupper(escolha);
+	printf("\n");
 
 }
 
 
 
 void menuCliente(void) {
-	printf("\n");
+	getchar();
+    system("clear");
 	printf("|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||\n");
 	printf("|||                                                                     |||\n");
   	printf("|||            ============================================             |||\n");
@@ -42,10 +47,28 @@ void menuCliente(void) {
 	printf("\n");
 }
 
+void menuEmpresa(void) {
+	getchar();
+    system("clear");
+	printf("|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||\n");
+	printf("|||                                                                     |||\n");
+  	printf("|||            ============================================             |||\n");
+	printf("|||            = = = = > > > > Menu Empresa < < < < = = = =				|||\n");
+  	printf("|||            ============================================             |||\n");
+	printf("|||                                                                     |||\n");
+	printf("|||            1. Relatório financeiro                                  |||\n");
+	printf("|||            2. Relatório de vendas                                   |||\n");
+	printf("|||            3. Voltar ao menu anterior					            |||\n");
+	printf("|||                                                                     |||\n");
+	printf("|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||\n");
+	printf("\n");
+}
+
 
 
 void menuSobre(void) {
-	printf("\n");
+	getchar();
+    system("clear");
 	printf("|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||\n");
 	printf("|||                                                                           |||\n");
 	printf("|||              Universidade Federal do Rio Grande do Norte                  |||\n");
