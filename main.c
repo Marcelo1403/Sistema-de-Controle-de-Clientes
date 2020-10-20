@@ -1,23 +1,21 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include "menus.h"
+#include "assinaturas.h"
 
 int main (void) {
-	char menu_principal = ' ';
+	char opcao = ' ';
 	do {
-		menu_principal = menuPrincipal();
-		printf(" %c", &menu_principal);
-		switch(menu_principal) {
+		limpaTela();
+		opcao = menuPrincipal();
+		printf(" %s", &opcao);
+		switch(opcao) {
 			
 			case '1':
-					menuCliente();
+					gerenciarCliente();
 					break;
 			case '2':
-					menuEmpresa();
+					gerenciarEmpresa();
 					break;
 			case '3':
 					menuSobre();
-					printf("teste");
 					break;
 			case '4':
 					printf("\n");
@@ -26,10 +24,10 @@ int main (void) {
 					break;
 			default:
 			    	printf("\n");
-					printf(">>>Opção errada. Digite uma opção válida: ");
+					printf("Opção errada. Digite uma opção válida: ");
 					printf("\n");
 		}
     }		
-	while (menu_principal != '5');
+	while (opcao != '5');
 	return 0;
 }
