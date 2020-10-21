@@ -17,7 +17,7 @@ int main (void) {
 			case '3':
 					menuSobre();
 					break;
-			case '4':
+			case '0':
 					printf("\n");
 					printf(" Obrigado por ultilizar nossos serviços.Volte sempre.\n");
 					printf("\n");
@@ -28,6 +28,6 @@ int main (void) {
 					printf("\n");
 		}
     }		
-	while (opcao != '5');
+	while (opcao != '0');
 	return 0;
 }

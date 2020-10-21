@@ -14,7 +14,7 @@ char menuPrincipal(void) {
 	printf("|||            1. Menu Cliente                                          |||\n");
 	printf("|||            2. Menu Empresa                                          |||\n");
 	printf("|||            3. Sobre o Programa                                      |||\n");
-	printf("|||            4. Encerrar programa                                     |||\n");
+	printf("|||            0. Encerrar programa                                     |||\n");
   	printf("|||                                                                     |||\n");
 	printf("|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||\n");
 	printf("\n");
@@ -40,7 +40,7 @@ void menuCliente(void) {
 	printf("|||            3. Atualizar o cadastro de um cliente                    |||\n");
 	printf("|||            4. Excluir um cliente do sistema                         |||\n");
 	printf("|||            5. Listar todos os clientes                              |||\n");
-	printf("|||            6. Voltar ao menu anterior                               |||\n");
+	printf("|||            0. Voltar ao menu anterior                               |||\n");
 	printf("|||                                                                     |||\n");
 	printf("|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||\n");
 	printf("\n");
@@ -56,7 +56,7 @@ void menuEmpresa(void) {
 	printf("|||                                                                     |||\n");
 	printf("|||            1. Relatório financeiro                                  |||\n");
 	printf("|||            2. Relatório de vendas                                   |||\n");
-	printf("|||            3. Voltar ao menu anterior                               |||\n");
+	printf("|||            0. Voltar ao menu anterior                               |||\n");
 	printf("|||                                                                     |||\n");
 	printf("|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||\n");
 	printf("\n");

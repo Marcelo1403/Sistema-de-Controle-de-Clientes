@@ -46,7 +46,7 @@ void gerenciarCliente(void){
                     printf("Opção de listar em desenvolvimento.");
                     break;   
             
-            case '6':
+            case '0':
                     system("clear");
                     printf("\n");
                     printf(" Obrigado por ultilizar nossos serviços.Volte sempre.\n");
@@ -59,7 +59,7 @@ void gerenciarCliente(void){
 				    printf("\n");
 
             }
-    } while(op!='7');
+    } while(op!='0');
 }
 
 
@@ -85,13 +85,6 @@ void gerenciarEmpresa(void){
                     system("clear");
                     printf("Opção Relatório de vendas em desenvolvimento.");
                     break;
-
-            case '3':
-                    system("clear");
-                    printf("\n");
-                    printf(" Obrigado por ultilizar nossos serviços.Volte sempre.\n");
-                    printf("\n");
-                    break;
             
             default:
 			        printf("\n");
@@ -99,5 +92,5 @@ void gerenciarEmpresa(void){
 				    printf("\n");
 
             }
-    } while(opc!='4');
+    } while(opc!='0');
 }
