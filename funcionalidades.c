@@ -3,8 +3,8 @@
 // Função para limmpar tela
 
 void limpaTela(void) {
-  if (system("CLS")) 
-      system("clear");
+        if (system("CLS")) 
+            system("clear");
 }
 
 
