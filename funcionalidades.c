@@ -23,29 +23,29 @@ void gerenciarCliente(void){
         switch(op){
             case '1':
                     system("clear");
-                    printf("Opção de cadastro em desenvolvimento.");
+                    cadastrarCliente();
                     break;
 
             case'2':
                     system("clear");
-                    printf("Opção de pesquisar em desenvolvimento.");
+                    pesquisarCliente();
                     break;
             
             case '3':
                     system("clear");
-                    printf("Opção de atualizar dados em desenvolvimento.");
+                    atualizarCliente();
                     break;   
 
             case '4':
                     system("clear");
-                    printf("Opção de excluir clientes em desenvolvimento.");
+                    excluirCliente();
                     break;
             
             case '5':
                     system("clear");
-                    printf("Opção de listar em desenvolvimento.");
-                    break;   
-            
+                    listarCliente();
+                    break;
+                    
             case '0':
                     system("clear");
                     printf("\n");
@@ -54,13 +54,58 @@ void gerenciarCliente(void){
                     break;
             
             default:
-			        printf("\n");
-				    printf(">>>Opção errada. Digite uma opção válida: ");
-				    printf("\n");
+		    printf("\n");
+		    printf(">>>Opção errada. Digite uma opção válida: ");
+		    printf("\n");
 
             }
     } while(op!='0');
 }
+
+// MODOLO CLIENTE
+void cadastrarCliente(void) {
+	printf("\n\n\nMódulo cadastrar Cliente\n\n\n");
+	printf("\n");
+	printf("\n\n\t\t\t\t<<< Em Desenvolvimento >>>\n\n");
+	printf("\t\t\t>>> Tecle <ENTER> para continuar...\n");
+	getchar();
+}
+
+
+void pesquisarCliente(void) {
+	printf("\n\n\nMódulo pesquisar Cliente\n\n\n");
+	printf("\n");
+	printf("\n\n\t\t\t\t<<< Em Desenvolvimento >>>\n\n");
+	printf("\t\t\t>>> Tecle <ENTER> para continuar...\n");
+	getchar();
+}
+
+
+void atualizarCliente(void) {
+	printf("\n\n\nMódulo atualizar Cliente\n\n\n");
+	printf("\n");
+	printf("\n\n\t\t\t\t<<< Em Desenvolvimento >>>\n\n");
+	printf("\t\t\t>>> Tecle <ENTER> para continuar...\n");
+	getchar();
+}
+
+void excluirCliente(void) {
+	printf("\n\n\nMódulo excluir Cliente\n\n\n");
+	printf("\n");
+	printf("\n\n\t\t\t\t<<< Em Desenvolvimento >>>\n\n");
+	printf("\t\t\t>>> Tecle <ENTER> para continuar...\n");
+	getchar();
+}
+
+void listarCliente(void) {
+	printf("\n\n\nMódulo excluir Cliente\n\n\n");
+	printf("\n");
+	printf("\n\n\t\t\t\t<<< Em Desenvolvimento >>>\n\n");
+	printf("\t\t\t>>> Tecle <ENTER> para continuar...\n");
+	getchar();
+}
+
+
 
 
 // FUNÇÃO PARA NAVEGAÇÃO DA EMPRESA
@@ -94,3 +139,5 @@ void gerenciarEmpresa(void){
             }
     } while(opc!='0');
 }
+
+

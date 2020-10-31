@@ -14,3 +14,8 @@ void menuSobre(void);
 void limpaTela(void);
 void gerenciarCliente(void);
 void gerenciarEmpresa(void);
+void cadastrarCliente(void);
+void pesquisarCliente(void);
+void atualizarCliente(void);
+void excluirCliente(void);
+void listarCliente(void);
