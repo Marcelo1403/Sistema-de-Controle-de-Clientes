@@ -12,9 +12,12 @@ int main (void) {
 					gerenciarCliente();
 					break;
 			case '2':
-					gerenciarEmpresa();
-					break;
+					gerenciarCompras();
+				    break;
 			case '3':
+					gerenciarRelatorios();
+					break;
+			case '4':
 					menuSobre();
 					break;
 			case '0':

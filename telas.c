@@ -12,8 +12,9 @@ char menuPrincipal(void) {
   	printf("|||            ============================================             |||\n");
 	printf("|||                                                                     |||\n");
 	printf("|||            1. Menu Cliente                                          |||\n");
-	printf("|||            2. Menu Empresa                                          |||\n");
-	printf("|||            3. Sobre o Programa                                      |||\n");
+	printf("|||            2. Menu Compras                                          |||\n");
+	printf("|||            3. Menu Relatório                                        |||\n");
+	printf("|||            4. Sobre o Programa                                      |||\n");
 	printf("|||            0. Encerrar programa                                     |||\n");
   	printf("|||                                                                     |||\n");
 	printf("|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||\n");
@@ -46,13 +47,13 @@ void menuCliente(void) {
 	printf("\n");
 }
 
-void menuEmpresa(void) {
+void menuRelatorios(void) {
     system("clear");
 	printf("|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||\n");
 	printf("|||                                                                     |||\n");
-  	printf("|||            ============================================             |||\n");
-	printf("|||            = = = = > > > > Menu Empresa < < < < = = = =	            |||\n");
-  	printf("|||            ============================================             |||\n");
+  	printf("|||            ===========================================              |||\n");
+	printf("|||            = = = > > > > Menu Relatórios < < < < = = =              |||\n");
+  	printf("|||            ===========================================              |||\n");
 	printf("|||                                                                     |||\n");
 	printf("|||            1. Relatório financeiro                                  |||\n");
 	printf("|||            2. Relatório de vendas                                   |||\n");
@@ -73,7 +74,7 @@ void menuSobre(void) {
 	printf("|||                Departamento de Computação e Tecnologia                    |||\n");
 	printf("|||                   Disciplina DCT1106 -- Programação                       |||\n");
 	printf("|||                   Projeto Sistema de Gestão Escolar                       |||\n");
-	printf("|||       Developed by  @marcelovictor_js and @tatialves2 - Sep, 2020         |||\n");
+	printf("|||               Developed by  @marcelovictor_js - Sep, 2020                 |||\n");
 	printf("|||                                                                           |||\n");
 	printf("|||///////////////////////////////////////////////////////////////////////////|||\n");
 	printf("|||                                                                           |||\n");
@@ -99,5 +100,7 @@ void menuSobre(void) {
 	printf("|||                                                                           |||\n");
 	printf("|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||\n");
 	printf("\n");
+	printf("\t\t\t>>> Tecle <ENTER> para continuar...\n");
+	getchar();
 }
 

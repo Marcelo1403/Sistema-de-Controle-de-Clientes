@@ -5,7 +5,7 @@
 
 char menuPrincipal(void);
 void menuCliente(void);
-void menuEmpresa(void);
+void menuRelatorios(void);
 void menuSobre(void);
 
 
@@ -13,7 +13,8 @@ void menuSobre(void);
 
 void limpaTela(void);
 void gerenciarCliente(void);
-void gerenciarEmpresa(void);
+void gerenciarCompras(void);
+void gerenciarRelatorios(void);
 void cadastrarCliente(void);
 void pesquisarCliente(void);
 void atualizarCliente(void);

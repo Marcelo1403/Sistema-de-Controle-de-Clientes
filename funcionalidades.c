@@ -64,12 +64,41 @@ void gerenciarCliente(void){
 
 // MODOLO CLIENTE
 void cadastrarCliente(void) {
-	printf("\n\n\nMódulo cadastrar Cliente\n\n\n");
-	printf("\n");
-	printf("\n\n\t\t\t\t<<< Em Desenvolvimento >>>\n\n");
-	printf("\t\t\t>>> Tecle <ENTER> para continuar...\n");
-	getchar();
+        char nome[100];
+        char end[200];
+        char email[100];
+        char estado[40];
+        char sexo[10];
+        char cidade[70];
+        char cpf[20];
+        char indentidade[20];
+        char nasc[12];
+        printf("==============================================\n");
+        printf("------|||     Cadastro cliente      |||-------\n");
+        printf("==============================================\n");     
+
+        printf("\n Nome: ");
+        scanf(" %99[^\n]", nome);
+        printf("\n Email: ");
+        scanf(" %99[^\n]", email);
+        printf("\n CPF: ");
+        scanf(" %19[^\n]",cpf);
+        printf("\n Indentidade: ");
+        scanf(" %19[^\n]", indentidade);
+        printf("\n Endereço: ");
+        scanf(" %9[^\n]", end);
+        printf("\n Cidade: ");
+        scanf(" %69[^\n]", cidade);
+        printf("\n Estado: ");
+        scanf(" %19[^\n]", estado);
+        printf("\nData de nascimento(dd/mm/aaaa): ");
+        scanf(" %10[^\n]", nasc);
+        printf("\nInforme o sexo do cliente (M/F): ");
+        scanf("%c", sexo);
+        getchar();
+
 }
+
 
 
 void pesquisarCliente(void) {
@@ -110,13 +139,13 @@ void listarCliente(void) {
 
 // FUNÇÃO PARA NAVEGAÇÃO DA EMPRESA
 
-void gerenciarEmpresa(void){
+void gerenciarRelatorios(void){
     char opc = ' ';
     system("clear");
     
     do{
         limpaTela();
-        menuEmpresa();
+        menuRelatorios();
         printf("Escolha sua opção: \n");
         scanf(" %c",&opc);
         getchar();
@@ -132,12 +161,41 @@ void gerenciarEmpresa(void){
                     break;
             
             default:
-			        printf("\n");
-				    printf(">>>Opção errada. Digite uma opção válida: ");
-				    printf("\n");
+		    printf("\n");
+		    printf(">>>Opção errada. Digite uma opção válida: ");
+		    printf("\n");
 
             }
     } while(opc!='0');
 }
 
 
+void gerenciarCompras(void){
+    char opc = ' ';
+    system("clear");
+    
+    do{
+        limpaTela();
+        menuRelatorios();
+        printf("Escolha sua opção: \n");
+        scanf(" %c",&opc);
+        getchar();
+        switch(opc){
+            case '1':
+                    system("clear");
+                    printf("Opção Relatório financeiro em desenvolvimento.");
+                    break;
+
+            case'2':
+                    system("clear");
+                    printf("Opção Relatório de vendas em desenvolvimento.");
+                    break;
+            
+            default:
+		    printf("\n");
+		    printf(">>>Opção errada. Digite uma opção válida: ");
+		    printf("\n");
+
+            }
+    } while(opc!='0');
+}
