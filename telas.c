@@ -47,6 +47,25 @@ void menuCliente(void) {
 	printf("\n");
 }
 
+void menuCompras(void) {
+    system("clear");
+	printf("|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||\n");
+	printf("|||                                                                     |||\n");
+  	printf("|||            ============================================             |||\n");
+	printf("|||            = = = = > > > > Menu Compras < < < < = = = =	            |||\n");
+  	printf("|||            ============================================             |||\n");
+	printf("|||                                                                     |||\n");
+	printf("|||            1. Cadastrar uma nova compra                             |||\n");
+	printf("|||            2. Pesquisar compra                                      |||\n");
+	printf("|||            3. Atualizar informações de uma compra                   |||\n");
+	printf("|||            4. Excluir compra                                        |||\n");
+	printf("|||            5. Listar todas as Compras                               |||\n");
+	printf("|||            0. Voltar ao menu anterior                               |||\n");
+	printf("|||                                                                     |||\n");
+	printf("|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||\n");
+	printf("\n");
+}
+
 void menuRelatorios(void) {
     system("clear");
 	printf("|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||\n");

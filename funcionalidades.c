@@ -73,16 +73,25 @@ void cadastrarCliente(void) {
         char cpf[20];
         char indentidade[20];
         char nasc[12];
+        char *pcpf = cpf;
         printf("==============================================\n");
         printf("------|||     Cadastro cliente      |||-------\n");
         printf("==============================================\n");     
 
         printf("\n Nome: ");
-        scanf(" %99[^\n]", nome);
+        scanf(" %99[a-z A-Z]", nome);
         printf("\n Email: ");
-        scanf(" %99[^\n]", email);
-        printf("\n CPF: ");
-        scanf(" %19[^\n]",cpf);
+        scanf(" %99[a-z.@]", email);
+        
+        printf("\nDigite seu CPF: ");
+        gets(cpf);
+        validaCpf(pcpf);
+        while(!(validaCpf(pcpf))){
+                printf("CPF invalido, digite novamente: ");
+                gets(pcpf);
+        }
+        
+        
         printf("\n Indentidade: ");
         scanf(" %19[^\n]", indentidade);
         printf("\n Endereço: ");
@@ -171,24 +180,46 @@ void gerenciarRelatorios(void){
 
 
 void gerenciarCompras(void){
-    char opc = ' ';
+    char op = ' ';
     system("clear");
     
     do{
         limpaTela();
-        menuRelatorios();
+        menuCompras();
         printf("Escolha sua opção: \n");
-        scanf(" %c",&opc);
+        scanf(" %c",&op);
         getchar();
-        switch(opc){
+        switch(op){
             case '1':
                     system("clear");
-                    printf("Opção Relatório financeiro em desenvolvimento.");
+                    cadastrarCompra();
                     break;
 
             case'2':
                     system("clear");
-                    printf("Opção Relatório de vendas em desenvolvimento.");
+                    pesquisarCompra();
+                    break;
+            
+            case '3':
+                    system("clear");
+                    atualizarCompra();
+                    break;   
+
+            case '4':
+                    system("clear");
+                    excluirCompra();
+                    break;
+            
+            case '5':
+                    system("clear");
+                    listarCompra();
+                    break;
+                    
+            case '0':
+                    system("clear");
+                    printf("\n");
+                    printf(" Obrigado por ultilizar nossos serviços.Volte sempre.\n");
+                    printf("\n");
                     break;
             
             default:
@@ -197,5 +228,60 @@ void gerenciarCompras(void){
 		    printf("\n");
 
             }
-    } while(opc!='0');
+    } while(op!='0');
+}
+
+// MODOLO COMPRAS
+void cadastrarCompra(void) {
+        char nome[100];
+        char codBarra[70];
+        char preco[100];
+         
+        printf("==============================================\n");
+        printf("------|||    Cadastro de Compras    |||-------\n");
+        printf("==============================================\n");     
+
+        printf("\n Nome do produto: ");
+        scanf(" %99[^\n]", nome);
+        printf("\n Preço: ");
+        scanf(" %99[^\n]", preco);
+        printf("\n Código de barras: ");
+        scanf(" %69[^\n]", codBarra);
+        getchar();
+
+}
+
+
+
+void pesquisarCompra(void) {
+	printf("\n\n\nMódulo pesquisar Cliente\n\n\n");
+	printf("\n");
+	printf("\n\n\t\t\t\t<<< Em Desenvolvimento >>>\n\n");
+	printf("\t\t\t>>> Tecle <ENTER> para continuar...\n");
+	getchar();
+}
+
+
+void atualizarCompra(void) {
+	printf("\n\n\nMódulo atualizar Cliente\n\n\n");
+	printf("\n");
+	printf("\n\n\t\t\t\t<<< Em Desenvolvimento >>>\n\n");
+	printf("\t\t\t>>> Tecle <ENTER> para continuar...\n");
+	getchar();
+}
+
+void excluirCompra(void) {
+	printf("\n\n\nMódulo excluir Cliente\n\n\n");
+	printf("\n");
+	printf("\n\n\t\t\t\t<<< Em Desenvolvimento >>>\n\n");
+	printf("\t\t\t>>> Tecle <ENTER> para continuar...\n");
+	getchar();
+}
+
+void listarCompra(void) {
+	printf("\n\n\nMódulo excluir Cliente\n\n\n");
+	printf("\n");
+	printf("\n\n\t\t\t\t<<< Em Desenvolvimento >>>\n\n");
+	printf("\t\t\t>>> Tecle <ENTER> para continuar...\n");
+	getchar();
 }

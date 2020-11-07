@@ -1,6 +1,33 @@
+int validaNome(char *pnome) {
+
+    int tam = strlen(pnome);
+    char letra;
+    for (int i = 0; i < tam; i++)
+    {
+        letra = pnome[i];
+        if (isdigit(letra)) {
+            /*printf("Nome inVálido");
+            break;*/
+            return 1;
+        }
+        if (isspace(letra)) {
+            //return 0;
+        }
+        if (isalpha(letra)) {
+            //return 0;
+        }
+    }
+    return 0;
+    //printf("Nome Válido");
+}
+
+
+
+// Fonte na qual a validação de CPF foi retirada: https://gist.github.com/eduardoedson/8f991b6d234a9ebdcbe3
+
 //Retorno: [1] - Se for válido | [0] - Se for inválido
 
-int validarCPF(char *cpf) {
+int validaCpf(char *cpf) {
     int i, j, digito1 = 0, digito2 = 0;
     if(strlen(cpf) != 11)
         return 0;
