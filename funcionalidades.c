@@ -254,7 +254,7 @@ void cadastrarCompra(void) {
 
 
 void pesquisarCompra(void) {
-	printf("\n\n\nMódulo pesquisar Cliente\n\n\n");
+	printf("\n\n\nMódulo pesquisar Compra\n\n\n");
 	printf("\n");
 	printf("\n\n\t\t\t\t<<< Em Desenvolvimento >>>\n\n");
 	printf("\t\t\t>>> Tecle <ENTER> para continuar...\n");
@@ -263,7 +263,7 @@ void pesquisarCompra(void) {
 
 
 void atualizarCompra(void) {
-	printf("\n\n\nMódulo atualizar Cliente\n\n\n");
+	printf("\n\n\nMódulo atualizar Compra\n\n\n");
 	printf("\n");
 	printf("\n\n\t\t\t\t<<< Em Desenvolvimento >>>\n\n");
 	printf("\t\t\t>>> Tecle <ENTER> para continuar...\n");
@@ -271,7 +271,7 @@ void atualizarCompra(void) {
 }
 
 void excluirCompra(void) {
-	printf("\n\n\nMódulo excluir Cliente\n\n\n");
+	printf("\n\n\nMódulo excluir Compra\n\n\n");
 	printf("\n");
 	printf("\n\n\t\t\t\t<<< Em Desenvolvimento >>>\n\n");
 	printf("\t\t\t>>> Tecle <ENTER> para continuar...\n");
@@ -279,7 +279,7 @@ void excluirCompra(void) {
 }
 
 void listarCompra(void) {
-	printf("\n\n\nMódulo excluir Cliente\n\n\n");
+	printf("\n\n\nMódulo excluir Compra\n\n\n");
 	printf("\n");
 	printf("\n\n\t\t\t\t<<< Em Desenvolvimento >>>\n\n");
 	printf("\t\t\t>>> Tecle <ENTER> para continuar...\n");
