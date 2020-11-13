@@ -1,4 +1,11 @@
 #include "assinaturas.h"
+#include <stdio.h>
+#include <ctype.h>
+#include <string.h>
+#include <stdlib.h>
+
+int chartoint(char);
+char inttochar(int);
 
 // Função para limmpar tela
 
@@ -74,24 +81,33 @@ void cadastrarCliente(void) {
         char indentidade[20];
         char nasc[12];
         char *pcpf = cpf;
+        char *pnome = nome;
         printf("==============================================\n");
         printf("------|||     Cadastro cliente      |||-------\n");
         printf("==============================================\n");     
 
-        printf("\n Nome: ");
-        scanf(" %99[a-z A-Z]", nome);
+        printf("\nNome: ");
+        gets(nome);
+        validaNome(pnome);
+        while((validaNome(pnome))) {
+        printf("Nome invalido, digite novamente: ");
+        gets(pnome);
+    }
+
+
+        /*
         printf("\n Email: ");
-        scanf(" %99[a-z.@]", email);
+        scanf(" %99[a-z.@]", email); */
         
         printf("\nDigite seu CPF: ");
-        gets(cpf);
+        gets(pcpf);
         validaCpf(pcpf);
         while(!(validaCpf(pcpf))){
                 printf("CPF invalido, digite novamente: ");
                 gets(pcpf);
         }
-        
-        
+        menuCliente();
+        /*
         printf("\n Indentidade: ");
         scanf(" %19[^\n]", indentidade);
         printf("\n Endereço: ");
@@ -103,7 +119,7 @@ void cadastrarCliente(void) {
         printf("\nData de nascimento(dd/mm/aaaa): ");
         scanf(" %10[^\n]", nasc);
         printf("\nInforme o sexo do cliente (M/F): ");
-        scanf("%c", sexo);
+        scanf("%c", sexo); */
         getchar();
 
 }

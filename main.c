@@ -1,4 +1,11 @@
 #include "assinaturas.h"
+#include <stdio.h>
+#include <ctype.h>
+#include <string.h>
+#include <stdlib.h>
+
+int chartoint(char);
+char inttochar(int);
 
 int main (void) {
 	char opcao = ' ';
