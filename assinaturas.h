@@ -35,6 +35,9 @@ void gerenciarRelatorios(void);
 // Assinaturas para validações
 int validaNome(char *);
 int validaCpf(char *);
+int dataValida(int , int , int );
+int bissexto(int );
+int validaEmail(char *);
 
 int chartoint(char);
 char inttochar(int);

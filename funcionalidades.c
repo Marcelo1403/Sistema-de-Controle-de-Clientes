@@ -71,57 +71,54 @@ void gerenciarCliente(void){
 
 // MODOLO CLIENTE
 void cadastrarCliente(void) {
+         int data[3];
+        int dia = data[0];
+        int mes = data[1];
+        int ano = data[2];
         char nome[100];
-        char end[200];
         char email[100];
-        char estado[40];
-        char sexo[10];
-        char cidade[70];
         char cpf[20];
-        char indentidade[20];
-        char nasc[12];
-        char *pcpf = cpf;
-        char *pnome = nome;
+        
         printf("==============================================\n");
         printf("------|||     Cadastro cliente      |||-------\n");
         printf("==============================================\n");     
 
         printf("\nNome: ");
-        gets(nome);
-        validaNome(pnome);
-        while((validaNome(pnome))) {
+        scanf("%s", nome); // função que pega tudo o que foi digitado
+        getchar();
+        validaNome(nome);
+        while((validaNome(nome))) {
         printf("Nome invalido, digite novamente: ");
-        gets(pnome);
+        gets(nome);
+        }
+
+        printf("\nDigite seu CPF: ");
+        gets(cpf);
+        validaCpf(cpf);
+        while(!(validaCpf(cpf))){
+                printf("CPF invalido, digite novamente: ");
+                gets(cpf);
+        }
+
+         printf("\nDigite sua data de nascimento (dd/mm/aaaa): ");
+        scanf("%d/%d/%d",&data[0], &data[1], &data[2]);
+        getchar();
+        dataValida(dia, mes, ano);
+        while(!dataValida(data[0], data[1], data[2])){
+        printf("\nData invalida! Digite novamente (dd/mm/aaaa): ");
+        scanf("%d/%d/%d",&data[0], &data[1], &data[2]);
+        }
+
+        printf("\nDigite seu email: ");
+        gets(email);
+        validaEmail(email);
+        while(!(validaEmail(email))){
+        printf("Email invalido, digite novamente: ");
+        gets(email);
     }
 
-
-        /*
-        printf("\n Email: ");
-        scanf(" %99[a-z.@]", email); */
-        
-        printf("\nDigite seu CPF: ");
-        gets(pcpf);
-        validaCpf(pcpf);
-        while(!(validaCpf(pcpf))){
-                printf("CPF invalido, digite novamente: ");
-                gets(pcpf);
-        }
-        menuCliente();
-        /*
-        printf("\n Indentidade: ");
-        scanf(" %19[^\n]", indentidade);
-        printf("\n Endereço: ");
-        scanf(" %9[^\n]", end);
-        printf("\n Cidade: ");
-        scanf(" %69[^\n]", cidade);
-        printf("\n Estado: ");
-        scanf(" %19[^\n]", estado);
-        printf("\nData de nascimento(dd/mm/aaaa): ");
-        scanf(" %10[^\n]", nasc);
-        printf("\nInforme o sexo do cliente (M/F): ");
-        scanf("%c", sexo); */
+        printf("\nUsuario cadastrado! Digite > Enter < para voltar ao menu Cliente!\n");
         getchar();
-
 }
 
 

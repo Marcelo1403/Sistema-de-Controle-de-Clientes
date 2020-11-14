@@ -1,9 +1,4 @@
 #include "assinaturas.h"
-#include <stdio.h>
-#include <ctype.h>
-#include <string.h>
-#include <stdlib.h>
-
 int chartoint(char);
 char inttochar(int);
 
@@ -36,6 +31,8 @@ int main (void) {
 			    	printf("\n");
 					printf("Opção errada. Digite uma opção válida: ");
 					printf("\n");
+					getchar();
+					break;
 		}
     }		
 	while (opcao != '0');

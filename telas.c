@@ -1,8 +1,4 @@
 #include "assinaturas.h"
-#include <stdio.h>
-#include <ctype.h>
-#include <string.h>
-#include <stdlib.h>
 
 
 char menuPrincipal(void) {
@@ -29,8 +25,6 @@ char menuPrincipal(void) {
     return (escolha);
 	printf("\n");
 }
-
-
 
 void menuCliente(void) {
     system("clear");
