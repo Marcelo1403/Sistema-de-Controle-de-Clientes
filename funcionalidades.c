@@ -71,7 +71,7 @@ void gerenciarCliente(void){
 
 // MODOLO CLIENTE
 void cadastrarCliente(void) {
-         int data[3];
+        int data[3];
         int dia = data[0];
         int mes = data[1];
         int ano = data[2];
@@ -84,7 +84,7 @@ void cadastrarCliente(void) {
         printf("==============================================\n");     
 
         printf("\nNome: ");
-        scanf("%s", nome); // função que pega tudo o que foi digitado
+        scanf("%s", nome);
         getchar();
         validaNome(nome);
         while((validaNome(nome))) {
