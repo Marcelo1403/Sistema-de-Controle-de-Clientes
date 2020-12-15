@@ -3,6 +3,27 @@
 #include <ctype.h>
 #include <string.h>
 
+typedef struct usuario Usuario;
+
+struct usuario {
+    int dia;
+    int mes;
+    int ano;
+    char nome[70];
+    char email[40];
+    char cpf[12];
+    char status;
+};
+
+typedef struct compras Compras;
+
+struct compras {
+    char nome[100];
+    char codBarra[70];
+    char preco[100];
+
+};
+
 // Assinaturas das telas.
 
 char menuPrincipal(void);
@@ -22,6 +43,8 @@ void pesquisarCliente(void);
 void atualizarCliente(void);
 void excluirCliente(void);
 void listarCliente(void);
+void exibeCliente(Usuario*);
+void gravaCliente(Usuario*);
 
 void gerenciarCompras(void);
 void cadastrarCompra(void);

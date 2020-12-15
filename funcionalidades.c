@@ -4,16 +4,11 @@
 #include <string.h>
 #include <stdlib.h>
 
-int chartoint(char);
-char inttochar(int);
-
 // Função para limmpar tela
 
 void limpaTela(void) {
-        if (system("CLS")) 
-            system("clear");
+        system("cls || clear");
 }
-
 
 // FUNÇÃO PARA NAVEGAÇÃO DOS MENUS CLIENTES
 
@@ -29,37 +24,37 @@ void gerenciarCliente(void){
         getchar();
         switch(op){
             case '1':
-                    system("clear");
+                    system("cls || clear");
                     cadastrarCliente();
                     break;
 
             case'2':
-                    system("clear");
+                    system("cls || clear");
                     pesquisarCliente();
                     break;
             
             case '3':
-                    system("clear");
+                    system("cls || clear");
                     atualizarCliente();
                     break;   
 
             case '4':
-                    system("clear");
+                    system("cls || clear");
                     excluirCliente();
                     break;
             
             case '5':
-                    system("clear");
+                    system("cls || clear");
                     listarCliente();
                     break;
                     
             case '0':
-                    system("clear");
+                    system("cls || clear");
                     printf("\n");
                     printf(" Obrigado por ultilizar nossos serviços.Volte sempre.\n");
                     printf("\n");
                     break;
-            
+           
             default:
 		    printf("\n");
 		    printf(">>>Opção errada. Digite uma opção válida: ");
@@ -71,64 +66,81 @@ void gerenciarCliente(void){
 
 // MODOLO CLIENTE
 void cadastrarCliente(void) {
-        int data[3];
-        int dia = data[0];
-        int mes = data[1];
-        int ano = data[2];
-        char nome[100];
-        char email[100];
-        char cpf[20];
-        
+        Usuario* usu;
+
         printf("==============================================\n");
         printf("------|||     Cadastro cliente      |||-------\n");
         printf("==============================================\n");     
-
+        usu = (Usuario*) malloc(sizeof(Usuario));
         printf("\nNome: ");
-        scanf("%s", nome);
-        getchar();
-        validaNome(nome);
-        while((validaNome(nome))) {
-        printf("Nome invalido, digite novamente: ");
-        gets(nome);
+        scanf(" %[^\n]", usu->nome);
+        while((validaNome(usu->nome))) {
+                printf("Nome invalido, digite novamente: ");
+                scanf(" %[^\n]", usu->nome);
         }
 
         printf("\nDigite seu CPF: ");
-        gets(cpf);
-        validaCpf(cpf);
-        while(!(validaCpf(cpf))){
+        scanf(" %[^\n]", usu->cpf);
+        while(!(validaCpf(usu->cpf))){
                 printf("CPF invalido, digite novamente: ");
-                gets(cpf);
+                scanf(" %[^\n]", usu->cpf);
         }
 
-         printf("\nDigite sua data de nascimento (dd/mm/aaaa): ");
-        scanf("%d/%d/%d",&data[0], &data[1], &data[2]);
-        getchar();
-        dataValida(dia, mes, ano);
-        while(!dataValida(data[0], data[1], data[2])){
-        printf("\nData invalida! Digite novamente (dd/mm/aaaa): ");
-        scanf("%d/%d/%d",&data[0], &data[1], &data[2]);
+        printf("\nDigite sua data de nascimento (dd/mm/aaaa): ");
+        scanf("%d/%d/%d",&usu->dia, &usu->mes, &usu->ano);
+        while(!dataValida(usu->dia, usu->mes, usu->ano)){
+                printf("\nData invalida! Digite novamente (dd/mm/aaaa): ");
+                scanf("%d/%d/%d",&usu->dia, &usu->mes, &usu->ano);
         }
 
         printf("\nDigite seu email: ");
-        gets(email);
-        validaEmail(email);
-        while(!(validaEmail(email))){
-        printf("Email invalido, digite novamente: ");
-        gets(email);
-    }
-
-        printf("\nUsuario cadastrado! Digite > Enter < para voltar ao menu Cliente!\n");
+        scanf(" %[^\n]", usu->email);
+        while(!(validaEmail(usu->email))){
+                printf("Email invalido, digite novamente: ");
+                scanf(" %[^\n]", usu->email);    
+        }
+        usu->status = '1';
+        gravaCliente(usu);
+        printf("\nUsuario cadastrado! Digite > Enter < para voltar ao menu Cliente!");
+        getchar();
         getchar();
 }
 
 
 
 void pesquisarCliente(void) {
-	printf("\n\n\nMódulo pesquisar Cliente\n\n\n");
-	printf("\n");
-	printf("\n\n\t\t\t\t<<< Em Desenvolvimento >>>\n\n");
-	printf("\t\t\t>>> Tecle <ENTER> para continuar...\n");
-	getchar();
+        FILE* fp;
+        Usuario* usu;
+        int achou;
+        char procurado[15];
+        fp = fopen("cliente.dat", "rb");
+        if (fp == NULL) {
+                printf("Ops! Ocorreu um erro na abertura do arquivo!\n");
+                printf("Não é possível continuar o programa...\n");
+                exit(1);
+        }
+        printf("\n\n");
+        printf("==============================================\n");
+        printf("------|||     Pesquisar cliente     |||-------\n");
+        printf("==============================================\n");
+        printf("Informe o Nome do Cliente a ser buscado: ");
+        scanf(" %14[^\n]", procurado);
+        usu = (Usuario*) malloc(sizeof(Usuario));
+        achou = 0;
+        while((!achou) && (fread(usu, sizeof(Usuario), 1, fp))) {
+                if ((strcmp(usu->nome, procurado) == 0) && (usu->status == '1')) {
+                        achou = 1;
+                }
+        }
+        fclose(fp);
+        if (achou) {
+                exibeCliente(usu);
+                getchar();
+                getchar();
+        } else {
+                printf("O cliente %s não foi encontrado...\n", procurado);
+        }
+        free(usu);
 }
 
 
@@ -156,7 +168,25 @@ void listarCliente(void) {
 	getchar();
 }
 
+void exibeCliente(Usuario* usu) {
+        printf("Nome: %s\n", usu->nome);
+        printf("CPF: %s\n", usu->cpf);
+        printf("Data de Nascimento: %d/%d/%d\n", usu->dia, usu->mes, usu->ano);
+        printf("Email: %s\n", usu->email);
+        printf("\n");
+}
 
+void gravaCliente(Usuario* usu) {
+        FILE* fp;
+        fp = fopen("cliente.dat", "ab");
+        if (fp == NULL) {
+                printf("Ops! Ocorreu um erro na abertura do arquivo!\n");
+                printf("Não é possível continuar o programa...\n");
+        exit(1);
+        }
+        fwrite(usu, sizeof(Usuario), 1, fp);
+        fclose(fp);
+}
 
 
 // FUNÇÃO PARA NAVEGAÇÃO DA EMPRESA
@@ -194,7 +224,7 @@ void gerenciarRelatorios(void){
 
 void gerenciarCompras(void){
     char op = ' ';
-    system("clear");
+    system("cls || clear");
     
     do{
         limpaTela();
@@ -204,32 +234,32 @@ void gerenciarCompras(void){
         getchar();
         switch(op){
             case '1':
-                    system("clear");
+                    system("cls || clear");
                     cadastrarCompra();
                     break;
 
             case'2':
-                    system("clear");
+                    system("cls || clear");
                     pesquisarCompra();
                     break;
             
             case '3':
-                    system("clear");
+                    system("cls || clear");
                     atualizarCompra();
                     break;   
 
             case '4':
-                    system("clear");
+                    system("cls || clear");
                     excluirCompra();
                     break;
             
             case '5':
-                    system("clear");
+                    system("cls || clear");
                     listarCompra();
                     break;
                     
             case '0':
-                    system("clear");
+                    system("cls || clear");
                     printf("\n");
                     printf(" Obrigado por ultilizar nossos serviços.Volte sempre.\n");
                     printf("\n");
@@ -246,20 +276,22 @@ void gerenciarCompras(void){
 
 // MODOLO COMPRAS
 void cadastrarCompra(void) {
-        char nome[100];
-        char codBarra[70];
-        char preco[100];
-         
+        Compras* com;
+        com = (Compras*) malloc (sizeof(Compras));
+
         printf("==============================================\n");
         printf("------|||    Cadastro de Compras    |||-------\n");
         printf("==============================================\n");     
 
         printf("\n Nome do produto: ");
-        scanf(" %99[^\n]", nome);
+        scanf(" %99[^\n]", com->nome);
         printf("\n Preço: ");
-        scanf(" %99[^\n]", preco);
+        scanf(" %99[^\n]", com->preco);
         printf("\n Código de barras: ");
-        scanf(" %69[^\n]", codBarra);
+        scanf(" %69[^\n]", com->codBarra);
+
+        printf("\nCompra cadastrada! Digite > Enter < para voltar ao menu Compras!");
+        getchar();
         getchar();
 
 }
@@ -298,3 +330,15 @@ void listarCompra(void) {
 	printf("\t\t\t>>> Tecle <ENTER> para continuar...\n");
 	getchar();
 }
+
+/* void gravaCliente(Usuario* usu) {
+  FILE* fp;
+  fp = fopen("cliente.dat", "ab");
+  if (fp == NULL) {
+    printf("Ops! Ocorreu um erro na abertura do arquivo!\n");
+    printf("Não é possível continuar o programa...\n");
+    exit(1);
+  }
+  fwrite(usu, sizeof(Usuario), 1, fp);
+  fclose(fp);
+} */
