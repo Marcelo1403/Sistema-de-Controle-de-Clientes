@@ -21,6 +21,8 @@ struct compras {
     char nome[100];
     char codBarra[70];
     char preco[100];
+    char codCompra[70];
+    char status;
 
 };
 
@@ -52,6 +54,8 @@ void pesquisarCompra(void);
 void atualizarCompra(void);
 void excluirCompra(void);
 void listarCompra(void);
+void exibeCompras(Compras*);
+void gravaCompras(Compras*);
 
 void gerenciarRelatorios(void);
 
