@@ -447,8 +447,8 @@ void cadastrarCompra(void) {
 void pesquisarCompra(void) {
 	FILE* fp;
         Compras* com;
-        int achou;
         char procurado[70];
+        int achou;
         fp = fopen("compras.dat", "r+b");
         if (fp == NULL) {
                 printf("Ops! Ocorreu um erro na abertura do arquivo!\n");
@@ -463,9 +463,9 @@ void pesquisarCompra(void) {
         scanf(" %69[^\n]", procurado);
         com = (Compras*) malloc(sizeof(Compras));
         achou = 0;
-        while((!achou) && (fread(com, sizeof(Compras), 1, fp))) {
+        while(fread(com, sizeof(Compras), 1, fp)) {
                 if ((strcmp(com->codCompra, procurado) == 0) && (com->status == '1')) {
-                        achou = 1;
+                        exibeCompras(com);
                 }
         }
         fclose(fp);
@@ -571,7 +571,7 @@ void excluirCompra(void) {
         com = (Compras*) malloc(sizeof(Compras));
         achou = 0;
         while((!achou) && (fread(com, sizeof(Compras), 1, fp))) {
-                if ((strcmp(com->codBarra, procurado) == 0) && (com->status == '1')) {
+                if ((strcmp(com->codCompra, procurado) == 0) && (com->status == '1')) {
                         achou = 1;
                 }
         }
